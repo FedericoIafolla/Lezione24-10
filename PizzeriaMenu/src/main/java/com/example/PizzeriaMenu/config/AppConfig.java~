@@ -1,0 +1,18 @@
+package com.example.PizzeriaMenu.config;
+
+import com.example.PizzeriaMenu.model.Pizza;
+import com.example.PizzeriaMenu.repository.DrinkRepository;
+import com.example.PizzeriaMenu.repository.PizzaRepository;
+import com.example.PizzeriaMenu.repository.ToppingRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+
+public class AppConfig {
+
+    @Bean
+    public Pizza margheritaPizza() {
+        return new Pizza("Pizza Margherita", 800, 4.99, "Media");
+    }
+}

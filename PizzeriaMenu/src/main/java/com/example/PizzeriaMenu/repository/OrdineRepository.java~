@@ -1,0 +1,4 @@
+package com.example.PizzeriaMenu.repository;
+
+public class OrdineRepository {
+}

@@ -1,0 +1,34 @@
+package com.example.PizzeriaMenu;
+
+import com.example.PizzeriaMenu.model.Pizza;
+import com.example.PizzeriaMenu.model.Drink;
+import com.example.PizzeriaMenu.model.Topping;
+import com.example.PizzeriaMenu.repository.PizzaRepository;
+import com.example.PizzeriaMenu.repository.DrinkRepository;
+import com.example.PizzeriaMenu.repository.ToppingRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+
+@SpringBootApplication
+public class PizzeriaMenuApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(PizzeriaMenuApplication.class, args);
+	}
+
+	@Bean
+	public CommandLineRunner run(ApplicationContext context, PizzaRepository pizzaRepo, DrinkRepository drinkRepo, ToppingRepository toppingRepo) {
+		return args -> {
+			Pizza pizza = context.getBean(Pizza.class);
+			Drink drink = context.getBean(Drink.class);
+			Topping topping = context.getBean(Topping.class);
+
+			pizzaRepo.save(pizza);
+			drinkRepo.save(drink);
+			toppingRepo.save(topping);
+		};
+	}
+}

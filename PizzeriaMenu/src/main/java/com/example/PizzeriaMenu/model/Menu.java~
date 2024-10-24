@@ -1,0 +1,4 @@
+package com.example.PizzeriaMenu.model;
+
+public class Menu {
+}
